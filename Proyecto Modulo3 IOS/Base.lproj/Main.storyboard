@@ -93,7 +93,7 @@
                             </button>
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="doH-nG-lbr" kind="show" id="nvm-TV-1X6"/>
+                                <segue destination="doH-nG-lbr" kind="show" identifier="carrito" id="nvm-TV-1X6"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
