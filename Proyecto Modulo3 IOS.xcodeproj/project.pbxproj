@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C83F27521E804A2800C1BC58 /* ImagenesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83F27511E804A2800C1BC58 /* ImagenesViewController.swift */; };
+		C83F27541E806E4D00C1BC58 /* compra.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83F27531E806E4D00C1BC58 /* compra.swift */; };
+		C83F27561E80735100C1BC58 /* ComprasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83F27551E80735100C1BC58 /* ComprasTableViewController.swift */; };
+		C83F27581E8079DA00C1BC58 /* itemCompra.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83F27571E8079DA00C1BC58 /* itemCompra.swift */; };
+		C84BBA111E7C9577008193D3 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84BBA101E7C9577008193D3 /* ItemCell.swift */; };
+		C84BBA131E7C9785008193D3 /* DetalleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84BBA121E7C9785008193D3 /* DetalleViewController.swift */; };
 		C8B27B801E7B331F00B40500 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B27B7F1E7B331F00B40500 /* AppDelegate.swift */; };
 		C8B27B821E7B331F00B40500 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B27B811E7B331F00B40500 /* ViewController.swift */; };
 		C8B27B851E7B331F00B40500 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8B27B831E7B331F00B40500 /* Main.storyboard */; };
@@ -14,6 +20,7 @@
 		C8B27B8A1E7B331F00B40500 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8B27B881E7B331F00B40500 /* LaunchScreen.storyboard */; };
 		C8B27B951E7B331F00B40500 /* Proyecto_Modulo3_IOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B27B941E7B331F00B40500 /* Proyecto_Modulo3_IOSTests.swift */; };
 		C8B27BA01E7B331F00B40500 /* Proyecto_Modulo3_IOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B27B9F1E7B331F00B40500 /* Proyecto_Modulo3_IOSUITests.swift */; };
+		C8B27BAE1E7B386100B40500 /* item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B27BAD1E7B386100B40500 /* item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +41,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C83F27511E804A2800C1BC58 /* ImagenesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagenesViewController.swift; sourceTree = "<group>"; };
+		C83F27531E806E4D00C1BC58 /* compra.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = compra.swift; sourceTree = "<group>"; };
+		C83F27551E80735100C1BC58 /* ComprasTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComprasTableViewController.swift; sourceTree = "<group>"; };
+		C83F27571E8079DA00C1BC58 /* itemCompra.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = itemCompra.swift; sourceTree = "<group>"; };
+		C84BBA101E7C9577008193D3 /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		C84BBA121E7C9785008193D3 /* DetalleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalleViewController.swift; sourceTree = "<group>"; };
 		C8B27B7C1E7B331F00B40500 /* Proyecto Modulo3 IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Proyecto Modulo3 IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8B27B7F1E7B331F00B40500 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8B27B811E7B331F00B40500 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +60,7 @@
 		C8B27B9B1E7B331F00B40500 /* Proyecto Modulo3 IOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Proyecto Modulo3 IOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8B27B9F1E7B331F00B40500 /* Proyecto_Modulo3_IOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Proyecto_Modulo3_IOSUITests.swift; sourceTree = "<group>"; };
 		C8B27BA11E7B331F00B40500 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8B27BAD1E7B386100B40500 /* item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +117,13 @@
 				C8B27B861E7B331F00B40500 /* Assets.xcassets */,
 				C8B27B881E7B331F00B40500 /* LaunchScreen.storyboard */,
 				C8B27B8B1E7B331F00B40500 /* Info.plist */,
+				C8B27BAD1E7B386100B40500 /* item.swift */,
+				C83F27531E806E4D00C1BC58 /* compra.swift */,
+				C84BBA101E7C9577008193D3 /* ItemCell.swift */,
+				C84BBA121E7C9785008193D3 /* DetalleViewController.swift */,
+				C83F27511E804A2800C1BC58 /* ImagenesViewController.swift */,
+				C83F27551E80735100C1BC58 /* ComprasTableViewController.swift */,
+				C83F27571E8079DA00C1BC58 /* itemCompra.swift */,
 			);
 			path = "Proyecto Modulo3 IOS";
 			sourceTree = "<group>";
@@ -259,8 +280,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C83F27581E8079DA00C1BC58 /* itemCompra.swift in Sources */,
+				C84BBA111E7C9577008193D3 /* ItemCell.swift in Sources */,
+				C84BBA131E7C9785008193D3 /* DetalleViewController.swift in Sources */,
 				C8B27B821E7B331F00B40500 /* ViewController.swift in Sources */,
+				C8B27BAE1E7B386100B40500 /* item.swift in Sources */,
 				C8B27B801E7B331F00B40500 /* AppDelegate.swift in Sources */,
+				C83F27541E806E4D00C1BC58 /* compra.swift in Sources */,
+				C83F27561E80735100C1BC58 /* ComprasTableViewController.swift in Sources */,
+				C83F27521E804A2800C1BC58 /* ImagenesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +533,7 @@
 				C8B27BA61E7B331F00B40500 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C8B27BA71E7B331F00B40500 /* Build configuration list for PBXNativeTarget "Proyecto Modulo3 IOSTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +542,7 @@
 				C8B27BA91E7B331F00B40500 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C8B27BAA1E7B331F00B40500 /* Build configuration list for PBXNativeTarget "Proyecto Modulo3 IOSUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +551,7 @@
 				C8B27BAC1E7B331F00B40500 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
