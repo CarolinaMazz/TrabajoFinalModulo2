@@ -90,6 +90,16 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func long(sender: UICollectionViewCell) {
+        var alertControler:UIAlertController
+        
+        //definimos la alerta que se va a mostrar definimos un controler
+        alertControler=UIAlertController(title: "Alert", message: "Alerta OK", preferredStyle: UIAlertControllerStyle.alert)
+        //creamos la accion
+        let accionOK = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in
+            print("Ok")})
+        //asignamos la accion y motramos
+        alertControler.addAction(accionOK)
+        self.present(alertControler, animated: true, completion: {})
         
     }
     
