@@ -11,8 +11,10 @@ import UIKit
 class ComprasTableViewController: UITableViewController {
     
     override func viewDidLoad() {
+        self.navigationItem.backBarButtonItem?.title=" "
         super.viewDidLoad()
-
+        
+            //UIBarButtonItem(title:"", style:nil, target:nil, action:nil)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -49,9 +51,37 @@ class ComprasTableViewController: UITableViewController {
         cell.imagen.image = item.imagen
         cell.precio.text = "S./ \(item.precio!)"
         
+        let swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(screen))
+        swipeGestureRecognizer.direction = UISwipeGestureRecognizerDirection.left
+        swipeGestureRecognizer.numberOfTouchesRequired = 1
+        cell.addGestureRecognizer(swipeGestureRecognizer)
+        
         return cell
     }
     
+    /*override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+     let indice = indexPath.row
+     print(indice)
+     compras.remove(at: indice)
+     tableView.reloadData()
+    }*/
+    
+    /*func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let indice = indexPath.row
+        let dato = items[indice]
+        self.performSegue(withIdentifier: "detalle", sender: dato)
+    }*/
+    
+    func screen(sender: UITableViewCell) {
+        
+        print(sender)
+        
+        /*let indice = indexPath.row
+        print(indice)
+        compras.remove(at: indice)
+        tableView.reloadData()*/
+    }
 
     /*
     // Override to support conditional editing of the table view.

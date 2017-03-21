@@ -10,12 +10,34 @@ import UIKit
 private let reuseIdentifier = "celda"
 var compras = Array<compra>()
 
+
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    @IBOutlet weak var collectionView: UICollectionView!
+    var itemsFiltrados = Array<item>()
     var items = Array<item>()
+    @IBOutlet weak var txtBuscar: UITextField!
+    var searchController : UISearchController!
 
+    @IBAction func txtBuscarTexto(_ sender: AnyObject) {
+        let texto = txtBuscar.text
+        
+        itemsFiltrados = items.filter({ (item) -> Bool in
+            //connvertimos un numero a string para realizar la busqueda de numeros con un string
+            return ("\(item.precio)".contains(texto!) || item.nombre.lowercased().contains(texto!))
+            //return String(dispositivo.precio).contains(texto!)
+            
+            //return dispositivo.nombre.lowercased().contains(texto!)
+            
+        })
+        
+        collectionView.reloadData()
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view, typically from a nib.
         for i in 1...8 {
             let datos = item()
@@ -50,6 +72,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         cell.lbPrecio.text = "S/. \(item.precio!)"
         cell.imagen.image = item.imagen
         
+        let longGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(long))
+        longGestureRecognizer.minimumPressDuration = 2 //segundos
+        longGestureRecognizer.numberOfTapsRequired = 1
+        longGestureRecognizer.numberOfTouchesRequired = 1
+        cell.imagen.addGestureRecognizer(longGestureRecognizer)
+        
         return cell
         
     }
@@ -58,8 +86,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         let indice = indexPath.row
         let dato = items[indice]
-        
         self.performSegue(withIdentifier: "detalle", sender: dato)
+    }
+    
+    func long(sender: UICollectionViewCell) {
+        
     }
     
     // MARK: - Navigation
@@ -69,13 +100,19 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "detalle" {
+            let DetalleViewController: DetalleViewController = segue.destination as! DetalleViewController
         
-        let DetalleViewController: DetalleViewController = segue.destination as! DetalleViewController
-        
-        DetalleViewController.parametro = sender as! item
+            DetalleViewController.parametro = sender as! item
+        }
         
     }
-
+    
+    @IBAction func btnCarro(_ sender: UIBarButtonItem) {
+        print("hola")
+        self.performSegue(withIdentifier: "carrito", sender: sender)
+    }
+    
 
 }
 

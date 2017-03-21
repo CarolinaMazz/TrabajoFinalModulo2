@@ -214,6 +214,7 @@
 				TargetAttributes = {
 					C8B27B7B1E7B331E00B40500 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = SYDMD78H24;
 						ProvisioningStyle = Automatic;
 					};
 					C8B27B8F1E7B331F00B40500 = {
@@ -440,7 +441,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = SYDMD78H24;
 				INFOPLIST_FILE = "Proyecto Modulo3 IOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Eurekatech.Proyecto-Modulo3-IOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -452,7 +455,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = SYDMD78H24;
 				INFOPLIST_FILE = "Proyecto Modulo3 IOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Eurekatech.Proyecto-Modulo3-IOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
