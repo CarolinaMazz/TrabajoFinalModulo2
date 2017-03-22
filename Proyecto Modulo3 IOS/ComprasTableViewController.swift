@@ -50,6 +50,7 @@ class ComprasTableViewController: UITableViewController {
         cell.nombre.text = item.nombre
         cell.imagen.image = item.imagen
         cell.precio.text = "S./ \(item.precio!)"
+        cell.tag = indexPath.row
         
         let swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(screen))
         swipeGestureRecognizer.direction = UISwipeGestureRecognizerDirection.left
@@ -73,7 +74,7 @@ class ComprasTableViewController: UITableViewController {
         self.performSegue(withIdentifier: "detalle", sender: dato)
     }*/
     
-    func screen(sender: UITableViewCell) {
+    func screen(sender: UISwipeGestureRecognizer) {
         
         print(sender)
         

@@ -19,6 +19,24 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet weak var txtBuscar: UITextField!
     var searchController : UISearchController!
 
+    /*@IBAction func txtBuscarTexto(_ sender: AnyObject) {
+        let texto = txtBuscar.text
+        
+        itemsFiltrados = items.filter({ (item) -> Bool in
+            //connvertimos un numero a string para realizar la busqueda de numeros con un string
+            return ("\(item.precio)".contains(texto!) || item.nombre.lowercased().contains(texto!))
+            //return String(dispositivo.precio).contains(texto!)
+            
+            //return dispositivo.nombre.lowercased().contains(texto!)
+            
+        })
+        
+        collectionView.reloadData()
+    }*/
+    
+    
+    
+    
     @IBAction func txtBuscarTexto(_ sender: AnyObject) {
         let texto = txtBuscar.text
         
@@ -33,6 +51,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         collectionView.reloadData()
     }
+    
     
     
     override func viewDidLoad() {
@@ -55,7 +74,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return items.count
+        if (txtBuscar.text != ""){
+            return itemsFiltrados.count
+        }else{
+            return items.count
+        }
+        
         
     }
     
@@ -66,7 +90,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         // Configure the cell metodo donde vamos a conigurar la celda y asignar los datos para que se muestren
         
         let indice = indexPath.row
-        let item = items[indice]
+        let item:item
+        if (txtBuscar.text != ""){
+            item = itemsFiltrados[indice]
+        }else{
+            item = items[indice]
+        }
+        
         
         cell.lbNombre.text = item.nombre
         cell.lbPrecio.text = "S/. \(item.precio!)"
@@ -74,9 +104,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         let longGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(long))
         longGestureRecognizer.minimumPressDuration = 2 //segundos
-        longGestureRecognizer.numberOfTapsRequired = 1
-        longGestureRecognizer.numberOfTouchesRequired = 1
-        cell.imagen.addGestureRecognizer(longGestureRecognizer)
+        //longGestureRecognizer.numberOfTapsRequired = 1
+        //longGestureRecognizer.numberOfTouchesRequired = 1
+        cell.addGestureRecognizer(longGestureRecognizer)
         
         return cell
         
@@ -89,8 +119,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         self.performSegue(withIdentifier: "detalle", sender: dato)
     }
     
-    func long(sender: UICollectionViewCell) {
-        var alertControler:UIAlertController
+    func long(sender: UILongPressGestureRecognizer) {
+        print("hola")
+        /*var alertControler:UIAlertController
         
         //definimos la alerta que se va a mostrar definimos un controler
         alertControler=UIAlertController(title: "Alert", message: "Alerta OK", preferredStyle: UIAlertControllerStyle.alert)
@@ -99,7 +130,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             print("Ok")})
         //asignamos la accion y motramos
         alertControler.addAction(accionOK)
-        self.present(alertControler, animated: true, completion: {})
+        self.present(alertControler, animated: true, completion: {})*/
         
     }
     
@@ -119,7 +150,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     @IBAction func btnCarro(_ sender: UIBarButtonItem) {
-        print("hola")
         self.performSegue(withIdentifier: "carrito", sender: sender)
     }
     
