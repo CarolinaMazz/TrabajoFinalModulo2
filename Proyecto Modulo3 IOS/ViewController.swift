@@ -101,11 +101,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         cell.lbNombre.text = item.nombre
         cell.lbPrecio.text = "S/. \(item.precio!)"
         cell.imagen.image = item.imagen
+        cell.tag = indexPath.row
         
         let longGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(long))
-        longGestureRecognizer.minimumPressDuration = 2 //segundos
-        //longGestureRecognizer.numberOfTapsRequired = 1
-        //longGestureRecognizer.numberOfTouchesRequired = 1
+        longGestureRecognizer.minimumPressDuration = 1 //segundos
+
         cell.addGestureRecognizer(longGestureRecognizer)
         
         return cell
@@ -120,17 +120,26 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func long(sender: UILongPressGestureRecognizer) {
-        print("hola")
-        /*var alertControler:UIAlertController
         
+        let listdatos = compra()
+        
+        let indice = sender.view!.tag
+        
+        listdatos.nombre = items[indice].nombre
+        listdatos.detalle = items[indice].detalle
+        listdatos.precio = items[indice].precio
+        listdatos.imagen = items[indice].imagen
+        compras.append(listdatos)
+        
+        var alertControler:UIAlertController
         //definimos la alerta que se va a mostrar definimos un controler
-        alertControler=UIAlertController(title: "Alert", message: "Alerta OK", preferredStyle: UIAlertControllerStyle.alert)
+        alertControler=UIAlertController(title: "Agregar al Carrito", message: "Fue Agregado al Carrito", preferredStyle: UIAlertControllerStyle.alert)
         //creamos la accion
         let accionOK = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in
             print("Ok")})
         //asignamos la accion y motramos
         alertControler.addAction(accionOK)
-        self.present(alertControler, animated: true, completion: {})*/
+        self.present(alertControler, animated: true, completion: {})
         
     }
     

@@ -76,12 +76,10 @@ class ComprasTableViewController: UITableViewController {
     
     func screen(sender: UISwipeGestureRecognizer) {
         
-        print(sender)
-        
-        /*let indice = indexPath.row
+        let indice = sender.view!.tag
         print(indice)
         compras.remove(at: indice)
-        tableView.reloadData()*/
+        tableView.reloadData()
     }
 
     /*
