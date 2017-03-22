@@ -11,13 +11,13 @@ import UIKit
 class ImagenesViewController: UIViewController {
 
     @IBOutlet weak var imagen: UIImageView!
-    @IBOutlet weak var nombre: UILabel!
+    //@IBOutlet weak var nombre: UILabel!
     var dataObject: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.nombre!.text = dataObject
+        //self.nombre!.text = dataObject
         self.imagen!.image = UIImage(named: dataObject)
     }
 
@@ -29,7 +29,7 @@ class ImagenesViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.nombre!.text = dataObject
+        //self.nombre!.text = dataObject
         self.imagen!.image = UIImage(named: dataObject)
     }
 

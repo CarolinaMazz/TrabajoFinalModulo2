@@ -19,6 +19,7 @@ class DetalleViewController:UIViewController,UIPageViewControllerDelegate,UIPage
     @IBOutlet weak var txtViewDetalle: UITextView!
     @IBOutlet weak var lbPrecio: UILabel!
     
+    //@IBOutlet weak var scrContenedor: UIScrollView!
     @IBOutlet weak var contenedor: UIView!
     
     override func viewDidLoad() {
@@ -27,6 +28,10 @@ class DetalleViewController:UIViewController,UIPageViewControllerDelegate,UIPage
         lbTitulo.text = parametro.nombre
         lbPrecio.text = "S/. \(parametro.precio!)"
         txtViewDetalle.text = parametro.detalle
+        
+        //scrContenedor.addSubview(txtViewDetalle)
+        
+        //scrContenedor.contentSize = txtViewDetalle.frame.size
         
         for i in 1...10 {
             paginas.append("carro\(i)")
