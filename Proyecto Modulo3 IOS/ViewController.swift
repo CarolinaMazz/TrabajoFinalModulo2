@@ -121,22 +121,22 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     func long(sender: UILongPressGestureRecognizer) {
         
-        let listdatos = compra()
         
-        let indice = sender.view!.tag
-        
-        listdatos.nombre = items[indice].nombre
-        listdatos.detalle = items[indice].detalle
-        listdatos.precio = items[indice].precio
-        listdatos.imagen = items[indice].imagen
-        compras.append(listdatos)
         
         var alertControler:UIAlertController
         //definimos la alerta que se va a mostrar definimos un controler
         alertControler=UIAlertController(title: "Agregar al Carrito", message: "Fue Agregado al Carrito", preferredStyle: UIAlertControllerStyle.alert)
         //creamos la accion
         let accionOK = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in
-            print("Ok")})
+            let listdatos = compra()
+            
+            let indice = sender.view!.tag
+            
+            listdatos.nombre = self.items[indice].nombre
+            listdatos.detalle = self.items[indice].detalle
+            listdatos.precio = self.items[indice].precio
+            listdatos.imagen = self.items[indice].imagen
+            compras.append(listdatos)})
         //asignamos la accion y motramos
         alertControler.addAction(accionOK)
         self.present(alertControler, animated: true, completion: {})
